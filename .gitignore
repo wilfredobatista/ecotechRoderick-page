@@ -1,0 +1,27 @@
+# Archivos y carpetas a ignorar
+
+# Dependencias
+node_modules/
+.pnpm-store/
+
+# Archivos de lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Salidas de build
+dist/
+build/
+
+# Entornos y configuración local
+.env
+.env.local
+
+# Archivos temporales y logs
+*.log
+*.tmp
+
+# Sistema operativo / VSCode
+.DS_Store
+.vscode/
+Thumbs.db

@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Urbanist', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #9AFFBD 0%, #CDFFDE 56%, #FFFFFF 100%);
+  padding: 2rem;
+}
+
+/* Contenedor principal */
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Espacio para el logo */
+.container::before {
+  content: "Ecolimpio";
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2e7d51;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Título */
+h2 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2e7d51;
+}
+
+/* Formularios */
+form {
+  display: none;
+  flex-direction: column;
+}
+
+form.active {
+  display: flex;
+}
+
+/* Campos */
+label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #444;
+}
+
+input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Botón */
+button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #45e9aa;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #38c795;
+}
+
+/* Cambio entre login y registro */
+.switch {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.switch a {
+  color: #2e7d51;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+
+form {
+  display: block;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+/* Formulario activo con animación */
+form.active {
+  opacity: 1;
+  visibility: visible;
+  max-height: 1000px; /* suficiente para mostrar el contenido */
+}
+
+/* Desvanecimiento suave del título */
+#form-title {
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  input, button {
+    font-size: 0.95rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .container::before {
+    font-size: 1.25rem;
+  }
+}
+
+body {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Cuando está cargado */
+body.loaded {
+  opacity: 1;
+}
+
+body {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Cuando está cargado */
+body.loaded {
+  opacity: 1;
+}

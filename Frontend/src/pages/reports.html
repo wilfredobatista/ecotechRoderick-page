@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoLimpio Admin - Reports</title>
+  <link rel="stylesheet" href="../styles/style_admin_reports.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">EcoLimpio Admin</div>
+    <nav>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="requests.html">Requests</a></li>
+        <li><a href="users.html">Users</a></li>
+        <li><a href="payments.html">Payments</a></li>
+        <li><a href="#" class="active">Reports</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="admin-container">
+    <h2>Analytics & Reports</h2>
+
+    <!-- CARDS -->
+    <section class="report-cards">
+      <div class="card">
+        <h3>Total Requests</h3>
+        <p id="total-requests">-</p>
+      </div>
+      <div class="card">
+        <h3>Completed Pickups</h3>
+        <p id="completed-pickups">-</p>
+      </div>
+      <div class="card">
+        <h3>Total Revenue</h3>
+        <p id="total-revenue">$0</p>
+      </div>
+      <div class="card">
+        <h3>Active Users</h3>
+        <p id="active-users">-</p>
+      </div>
+    </section>
+
+    <!-- CHARTS -->
+    <section class="charts">
+      <div class="chart-box">
+        <h4>Requests by Waste Type</h4>
+        <canvas id="wasteChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <h4>Monthly Activity</h4>
+        <canvas id="monthlyChart"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIBRERÍA DE CHARTS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../scripts/admin_reports.js"></script>
+  <script src="../scripts/transition.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoLimpio Admin - Dashboard</title>
+  <link rel="stylesheet" href="../styles/style_admin_dashboard.css" />
+</head>
+<body>
+
+  <!-- NAVBAR ADMIN -->
+  <header class="navbar">
+    <div class="logo">EcoLimpio Admin</div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Dashboard</a></li>
+        <li><a href="requests.html">Requests</a></li>
+        <li><a href="users.html">Users</a></li>
+        <li><a href="payments.html">Payments</a></li>
+        <li><a href="reports.html">Reports</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN DASHBOARD -->
+  <main class="admin-container">
+    <h2>Welcome, Admin</h2>
+
+    <!-- METRICS CARDS -->
+    <section class="metrics">
+      <div class="card">
+        <h3>Total Requests</h3>
+        <p id="total-requests">142</p>
+      </div>
+      <div class="card">
+        <h3>Pending</h3>
+        <p id="pending-requests">26</p>
+      </div>
+      <div class="card">
+        <h3>Completed</h3>
+        <p id="completed-requests">103</p>
+      </div>
+      <div class="card">
+        <h3>Users</h3>
+        <p id="total-users">59</p>
+      </div>
+    </section>
+
+    <!-- ACTIVITY TABLE -->
+    <section class="recent-activity">
+      <h3>Recent Requests</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>User</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="recent-table">
+          <tr>
+            <td>2025-07-22</td>
+            <td>Maria R.</td>
+            <td>Plastic</td>
+            <td>Pending</td>
+            <td>$20</td>
+          </tr>
+          <tr>
+            <td>2025-07-21</td>
+            <td>Juan L.</td>
+            <td>Organic</td>
+            <td>Completed</td>
+            <td>$15</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="../scripts/admin_dashboard.js"></script>
+  <script src="../scripts/transition.js"></script>
+</body>
+</html>

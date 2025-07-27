@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoLimpio - Home</title>
+  <link rel="stylesheet" href="../styles/style_home.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">EcoLimpio</div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-icon">
+      <!-- Icono del reciclaje -->
+      <img src="icons/recycle.svg" alt="Recycle Icon" />
+    </div>
+    <h1>Eco-Friendly Waste Collection</h1>
+    <p>
+      Professional waste collection services for your home. We make recycling easy and convenient while protecting our environment.
+    </p>
+    <button class="btn-primary">Get started</button>
+  </section>
+
+  <!-- SERVICE CARDS -->
+  <section class="services">
+    <div class="card">
+      <img src="icons/organic.svg" alt="Organic Waste" />
+      <h3>Organic Waste</h3>
+      <p>Professional collection and processing service</p>
+    </div>
+    <div class="card">
+      <img src="icons/plastic.svg" alt="Plastic Recycling" />
+      <h3>Plastic Recycling</h3>
+      <p>Professional collection and processing service</p>
+    </div>
+    <div class="card">
+      <img src="icons/electric.svg" alt="Electric Waste" />
+      <h3>Electric Waste</h3>
+      <p>Professional collection and processing service</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <h2>What our Customers Say</h2>
+    <div class="testimonial-list">
+      <div class="testimonial">
+        <div class="profile">
+          <img src="icons/user.svg" alt="Maria Rodriguez" />
+          <div>
+            <strong>Maria Rodriguez</strong><br />
+            <span>Environmental advocate</span>
+          </div>
+        </div>
+        <p>
+          Ecolimpio made waste management so easy! Their service is reliable and truly helps the environment.
+        </p>
+      </div>
+
+      <div class="testimonial">
+        <div class="profile">
+          <img src="icons/user.svg" alt="Maria Rodriguez" />
+          <div>
+            <strong>Maria Rodriguez</strong><br />
+            <span>Environmental advocate</span>
+          </div>
+        </div>
+        <p>
+          Ecolimpio made waste management so easy! Their service is reliable and truly helps the environment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <script>
+    // Fade-in al cargar
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("loaded");
+    });
+
+    // Fade-out al salir (cuando se hace click en un enlace interno)
+    document.querySelectorAll('a[href$=".html"]').forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const url = link.getAttribute("href");
+
+        document.body.classList.remove("loaded");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 300); // espera a que termine la animación
+      });
+    });
+  </script>
+
+  <script src="../scripts/Home.js"></script>
+</body>
+</html>

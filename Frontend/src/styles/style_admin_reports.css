@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap');
+
+:root {
+  --green-primary: #45e9aa;
+  --green-light: #cdffde;
+  --green-bg: #9affbd;
+  --gray-light: #f8f8f8;
+  --text-dark: #222;
+  --text-light: #555;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --card-bg: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Urbanist', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to bottom right, var(--green-bg), var(--green-light), #fff);
+  padding: 1rem;
+  color: var(--text-dark);
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--green-primary);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.navbar a.active,
+.navbar a:hover {
+  background-color: var(--green-primary);
+  color: #fff;
+}
+
+/* MAIN CONTAINER */
+.admin-container {
+  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.admin-container h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+/* CARDS */
+.report-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.card p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+/* CHARTS */
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.chart-box {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.chart-box h4 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}

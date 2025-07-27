@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoLimpio - Book Service</title>
+  <link rel="stylesheet" href="../styles/style_service.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">EcoLimpio</div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#" class="active">Service</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BOOKING FORM -->
+  <main class="booking-container">
+    <h2>Book Your Collection Service</h2>
+
+    <!-- Step 1: Waste Type -->
+    <section class="form-section">
+      <h3>Select Waste Type</h3>
+      <div class="waste-options">
+        <button class="option" data-type="organic">
+          <img src="icons/organic.svg" alt="Organic" />
+          <span>Organic</span>
+        </button>
+        <button class="option" data-type="plastic">
+          <img src="icons/plastic.svg" alt="Plastic" />
+          <span>Plastic</span>
+        </button>
+        <button class="option" data-type="electric">
+          <img src="icons/electric.svg" alt="Electric" />
+          <span>Electric</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Step 2: Waste Amount -->
+    <section class="form-section">
+      <h3>Select Amount</h3>
+      <div class="amount-options">
+        <button class="option" data-amount="small">Small<br><span>1 - 2 bags</span></button>
+        <button class="option" data-amount="medium">Medium<br><span>3 - 5 bags</span></button>
+        <button class="option" data-amount="large">Large<br><span>6+ bags</span></button>
+      </div>
+    </section>
+
+    <!-- Step 3: Pickup Location -->
+    <section class="form-section">
+      <h3>Pickup Location</h3>
+      <div class="location-input">
+        <label for="address">
+          <span class="icon">📍</span>
+          <input type="text" id="address" name="address" placeholder="Enter your address..." required />
+        </label>
+        <div class="map-preview">
+          <!-- Aquí podrías insertar un iframe de Google Maps real -->
+          <img src="map-preview.jpg" alt="Map preview" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 4: Upload Photo -->
+    <section class="form-section">
+      <h3>Upload Photos</h3>
+      <div class="upload-box">
+        <label for="photo-upload" class="upload-label">
+          <div class="upload-icon">📷</div>
+          <p>Upload Photos of your waste</p>
+          <input type="file" id="photo-upload" name="photos" accept="image/*" multiple hidden />
+          <button type="button" class="btn-upload">Choose Files</button>
+        </label>
+      </div>
+    </section>
+
+    <!-- Continue Button -->
+    <div class="form-footer">
+      <button class="btn-continue">Continue to Checkout</button>
+    </div>
+  </main>
+
+  <script>
+  // Fade-in al cargar
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("loaded");
+  });
+
+  // Fade-out al salir (cuando se hace click en un enlace interno)
+  document.querySelectorAll('a[href$=".html"]').forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const url = link.getAttribute("href");
+
+      document.body.classList.remove("loaded");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 300); // espera a que termine la animación
+    });
+  });
+</script>
+
+  <script src="../scripts/Services.js"></script>
+</body>
+</html>

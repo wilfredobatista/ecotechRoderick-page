@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap');
+
+:root {
+  --green-primary: #45e9aa;
+  --green-light: #cdffde;
+  --green-bg: #9affbd;
+  --gray-light: #f7f7f7;
+  --text-dark: #222;
+  --text-light: #555;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Urbanist', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to bottom right, var(--green-bg) 0%, var(--green-light) 56%, #ffffff 100%);
+  padding: 1rem;
+  color: var(--text-dark);
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--green-primary);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.navbar a.active,
+.navbar a:hover {
+  background-color: var(--green-primary);
+  color: #fff;
+}
+
+/* CONTAINER */
+.booking-container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.booking-container h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+}
+
+.form-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.waste-options,
+.amount-options {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.option {
+  background: #fff;
+  border: 2px solid var(--green-primary);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  flex: 1;
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 120px;
+}
+
+.option:hover,
+.option.selected {
+  background-color: var(--green-light);
+  border-color: #2e7d51;
+}
+
+.option img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.option span {
+  font-weight: 600;
+}
+
+.amount-options .option {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.amount-options .option span {
+  display: block;
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* ADDRESS */
+.location-input label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.location-input input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 2px solid var(--green-primary);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.map-preview {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.map-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* UPLOAD BOX */
+.upload-box {
+  border: 2px dashed #ccc;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  background-color: var(--gray-light);
+  position: relative;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.upload-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn-upload {
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background-color: var(--green-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* FOOTER BUTTON */
+.form-footer {
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.btn-continue {
+  background-color: var(--green-primary);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-continue:hover {
+  background-color: #38c795;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .waste-options,
+  .amount-options {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+body {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Cuando está cargado */
+body.loaded {
+  opacity: 1;
+}

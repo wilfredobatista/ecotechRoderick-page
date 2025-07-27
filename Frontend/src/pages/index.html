@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style_index.css">
+    <title>Ecolimpio</title>
+</head>
+<body>
+     <div class="container">
+    <h2 id="form-title">Iniciar Sesión</h2>
+
+    <form id="login-form" class="active">
+      <label for="login-username">Username</label>
+      <input type="text" id="login-username" name="username" required />
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="password" required />
+
+      <button type="submit">Ingresar</button>
+    </form>
+
+    <form id="register-form">
+      <label for="register-name">Nombre completo</label>
+      <input type="text" id="register-name" name="fullname" required />
+
+      <label for="register-email">Email</label>
+      <input type="email" id="register-email" name="email" required />
+
+      <label for="register-password">Password</label>
+      <input type="password" id="register-password" name="password" required />
+
+      <label for="register-phone">Teléfono</label>
+      <input type="tel" id="register-phone" name="phone" required />
+
+      <label for="register-location">Ubicación</label>
+      <input type="text" id="register-location" name="location" required />
+
+      <button type="submit">Registrarse</button>
+    </form>
+
+    <div class="switch">
+      <span id="toggle-text">
+        ¿No tienes cuenta?
+        <a id="switch-link">Regístrate</a>
+      </span>
+    </div>
+  </div>
+    <script>
+      // Fade-in al cargar
+      window.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("loaded");
+      });
+
+      // Fade-out al salir (cuando se hace click en un enlace interno)
+      document.querySelectorAll('a[href$=".html"]').forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const url = link.getAttribute("href");
+
+          document.body.classList.remove("loaded");
+
+          setTimeout(() => {
+            window.location.href = url;
+          }, 300); // espera a que termine la animación
+        });
+      });
+    </script>
+    <script src="../scripts/SingUp.js"></script>
+</body>
+</html>

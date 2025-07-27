@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoLimpio Admin - Payments</title>
+  <link rel="stylesheet" href="../styles/style_admin_payments.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">EcoLimpio Admin</div>
+    <nav>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="requests.html">Requests</a></li>
+        <li><a href="users.html">Users</a></li>
+        <li><a href="#" class="active">Payments</a></li>
+        <li><a href="reports.html">Reports</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="admin-container">
+    <h2>Payment Records</h2>
+
+    <section class="payments-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>User</th>
+            <th>Amount</th>
+            <th>Payment Method</th>
+            <th>Status</th>
+            <th>Reference</th>
+          </tr>
+        </thead>
+        <tbody id="payments-body">
+          <tr>
+            <td>2025-07-21</td>
+            <td>Maria R.</td>
+            <td>$25</td>
+            <td>Credit Card</td>
+            <td><span class="badge badge-completed">Completed</span></td>
+            <td>TXN987654321</td>
+          </tr>
+          <!-- Más registros cargados dinámicamente -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="../scripts/admin_payments.js"></script>
+  <script src="../scripts/transition.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoLimpio - Checkout</title>
+  <link rel="stylesheet" href="../styles/style_checkout.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">EcoLimpio</div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="#" class="active">Checkout</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CHECKOUT MAIN -->
+  <main class="checkout-container">
+    <h2>Review Your Order</h2>
+
+    <!-- Summary -->
+    <section class="summary">
+      <h3>Service Summary</h3>
+      <ul>
+        <li><strong>Waste Type:</strong> <span id="summary-type">Electronic</span></li>
+        <li><strong>Amount:</strong> <span id="summary-amount">Large</span></li>
+        <li><strong>Pickup Location:</strong> <span id="summary-address">Not provided</span></li>
+        <li><strong>Photos Uploaded:</strong> <span id="summary-photos">0</span></li>
+      </ul>
+      <div class="total">
+        <strong>Total:</strong> <span id="summary-total">$50</span>
+      </div>
+    </section>
+
+    <!-- Payment -->
+    <section class="payment">
+      <h3>Payment Method</h3>
+
+      <div class="payment-method">
+        <label>
+          <input type="radio" name="payment" value="credit" checked />
+          Credit Card
+        </label>
+        <label>
+          <input type="radio" name="payment" value="paypal" />
+          PayPal
+        </label>
+      </div>
+
+      <div class="card-info">
+        <input type="text" placeholder="Card Number" id="card-number" />
+        <div class="card-details">
+          <input type="text" placeholder="MM/YY" id="card-exp" />
+          <input type="text" placeholder="CVC" id="card-cvc" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Confirm Button -->
+    <div class="form-footer">
+      <button class="btn-confirm">✔ Confirm Order</button>
+    </div>
+  </main>
+  <script>
+    // Fade-in al cargar
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("loaded");
+    });
+
+    // Fade-out al salir (cuando se hace click en un enlace interno)
+    document.querySelectorAll('a[href$=".html"]').forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const url = link.getAttribute("href");
+
+        document.body.classList.remove("loaded");
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 300); // espera a que termine la animación
+      });
+    });
+  </script>
+  <script src="../scripts/Checkout.js"></script>
+</body>
+</html>

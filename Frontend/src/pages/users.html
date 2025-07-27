@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoLimpio Admin - Users</title>
+  <link rel="stylesheet" href="../styles/style_admin_users.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">EcoLimpio Admin</div>
+    <nav>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="requests.html">Requests</a></li>
+        <li><a href="#" class="active">Users</a></li>
+        <li><a href="payments.html">Payments</a></li>
+        <li><a href="reports.html">Reports</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="admin-container">
+    <h2>Registered Users</h2>
+
+    <section class="users-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Location</th>
+            <th>Registered</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="users-body">
+          <tr>
+            <td>Maria Rodriguez</td>
+            <td>maria@example.com</td>
+            <td>+507 6000-0000</td>
+            <td>Panama City</td>
+            <td>2025-06-20</td>
+            <td>
+              <button class="btn-view">🔍 View</button>
+              <button class="btn-delete">🗑 Delete</button>
+            </td>
+          </tr>
+          <!-- Más filas cargadas dinámicamente -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="../scripts/admin_users.js"></script>
+  <script src="../scripts/transition.js"></script>
+</body>
+</html>

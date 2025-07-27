@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700&display=swap');
+
+:root {
+  --green-primary: #45e9aa;
+  --green-light: #cdffde;
+  --green-bg: #9affbd;
+  --gray-light: #f8f8f8;
+  --text-dark: #222;
+  --text-light: #555;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --status-pending: #e67e22;
+  --status-in-process: #f1c40f;
+  --status-completed: #27ae60;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Urbanist', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to bottom right, var(--green-bg), var(--green-light), #fff);
+  padding: 1rem;
+  color: var(--text-dark);
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--green-primary);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.navbar a.active,
+.navbar a:hover {
+  background-color: var(--green-primary);
+  color: #fff;
+}
+
+/* CONTAINER */
+.admin-container {
+  background-color: #fff;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.admin-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* TABLE */
+.request-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: var(--green-primary);
+  color: white;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+/* STATUS BADGES */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 20px;
+  color: white;
+}
+
+.badge-pending {
+  background-color: var(--status-pending);
+}
+
+.badge-in-process {
+  background-color: var(--status-in-process);
+}
+
+.badge-completed {
+  background-color: var(--status-completed);
+}
+
+/* DROPDOWN */
+.status-dropdown {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  th, td {
+    font-size: 0.85rem;
+  }
+
+  .status-dropdown {
+    width: 100%;
+  }
+}
